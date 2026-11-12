@@ -1,0 +1,25 @@
+{
+  "ryu_command": [
+    "ryu-manager",
+    "--observe-links",
+    "--ofp-tcp-listen-port",
+    "6653",
+    "ryu.app.rest_router",
+    "ryu.app.gui_topology.gui_topology"
+  ],
+  "onos_command": [
+    "sudo",
+    "-n",
+    "/opt/onos/bin/onos-service",
+    "start"
+  ],
+  "ryu_url": "http://127.0.0.1:8080",
+  "onos_url": "http://127.0.0.1:8181",
+  "router_config": "Project_WAN_Router.json",
+  "timeout_seconds": 180,
+  "expected_onos_devices": [
+    "of:0000000000000101",
+    "of:0000000000000102",
+    "of:0000000000000103"
+  ]
+}
